@@ -1,4 +1,6 @@
 Ihazasite::Application.routes.draw do
+  root :to => 'something#index'
+  get 'something' => 'something#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
