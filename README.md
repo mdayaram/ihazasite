@@ -1,2 +1,2 @@
-ihazasite
+I Haz a Site!
 =========
