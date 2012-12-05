@@ -6,4 +6,9 @@ class SomethingController < ApplicationController
     end
   end
 
+  def template
+    template = params[:template]
+    render template: "something/#{template}"
+  end
+
 end
