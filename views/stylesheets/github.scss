@@ -27,7 +27,7 @@ blockquote,q
 }
 blockquote:before,blockquote:after,q:before,q:after
 {
-	content: '';
+	content: "";
 	content: none;
 }
 table
@@ -14114,7 +14114,7 @@ ol.list-tip,ul.list-tip
 ol.list-tip:before,ul.list-tip:before
 {
 	color: #fff;
-	content: "▲";
+	content: "\ue28886";
 	display: block;
 	font-size: 14px;
 	margin: 0 auto;
