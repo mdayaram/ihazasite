@@ -21,7 +21,7 @@ get "/stylesheets/:sheet.css" do |sheet|
 end
 
 # Routes
-get "/" do
-  markdown(:hugs)
+get "/p/:mdfile" do |mdfile|
+  markdown "p/#{mdfile}".to_sym
 end
 
