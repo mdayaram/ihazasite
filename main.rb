@@ -1,12 +1,14 @@
 require 'sinatra'
 
 # Markdown renderer
-require 'redcarpet'
+require 'glorify'
 
-get "/hi" do
-  markdown(:hi)
-end
+# Config for markdown layout engine.
+Tilt.prefer Sinatra::Glorify::Template, '.md', '.markdown', '.mkd'
+set :markdown, { :layout_engine => :haml, :layout => :'layouts/markdown' }
+#register Sinatra::Glorify  #only in modular apps
 
 get "/" do
-  markdown(:index)
+  markdown(:hugs)
 end
+

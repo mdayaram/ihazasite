@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Server
 gem 'sinatra'
 
-# Formatting languages
-gem 'redcarpet'
+# Formatting engines
+gem 'glorify' # redcarpet with syntax hilighting like github
 gem 'haml'
 gem 'sass'
