@@ -22,6 +22,6 @@ end
 
 # Routes
 get "/p/:mdfile" do |mdfile|
-  markdown "p/#{mdfile}".to_sym
+  markdown "pages/#{mdfile}".to_sym
 end
 
