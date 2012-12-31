@@ -25,3 +25,6 @@ get "/p/:mdfile" do |mdfile|
   markdown "markdown/#{mdfile}".to_sym
 end
 
+get "/" do
+  markdown "markdown/index.html".to_sym
+end
