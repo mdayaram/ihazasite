@@ -25,6 +25,15 @@ get "/p/:mdfile" do |mdfile|
   markdown "markdown/#{mdfile}".to_sym
 end
 
-get "/" do
-  markdown "markdown/index.html".to_sym
+["/", "/index.html"].each do |path|
+  get path do
+    markdown "markdown/index.html".to_sym
+  end
+end
+
+["/index.txt", "/text.html"].each do |path|
+  get path do
+    content_type 'text/plain'
+    markdown "markdown/index.html".to_sym
+  end
 end
