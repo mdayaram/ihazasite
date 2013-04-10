@@ -37,3 +37,22 @@ end
     markdown "markdown/index.html".to_sym
   end
 end
+
+["/ua", "/ua.*"].each do |path|
+  get path do
+    user_agent = request.env["HTTP_USER_AGENT"]
+    if user_agent.nil? or user_agent.empty?
+      return "Hi there stranger!\n"
+    elsif user_agent =~ /iphone/i
+      return "Hi there iPhone user!\n"
+    elsif user_agent =~ /ipad/i
+      return "Hi there iPad user!\n"
+    elsif user_agent =~ /ipod/i
+      return "Hi there iPod user!\n"
+    elsif user_agent =~ /android/i
+      return "Hi there Android user!\n"
+    else
+      return "Hi there Desktop user!\n"
+    end
+  end
+end
