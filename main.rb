@@ -56,3 +56,8 @@ end
     end
   end
 end
+
+get "/lsb" do
+  result = `cat /etc/lsb-release`
+  return result
+end
