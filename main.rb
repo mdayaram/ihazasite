@@ -60,7 +60,19 @@ end
 get "/lsb" do
   content_type 'text/plain'
   result = `cat /etc/lsb-release`
-  result += "\n" + `ruby -v`
-  result += "\n" + `python --version`
+  result += "\n\n\n"
+  result += `dpkg -s curl`
+  result += "\n\n\n"
+  result += `dpkg -s git`
+  result += "\n\n\n"
+  result += `dpkg -s mercurial`
+  result += "\n\n\n"
+  result += `dpkg -s make`
+  result += "\n\n\n"
+  result += `dpkg -s binutils`
+  result += "\n\n\n"
+  result += `dpkg -s bison`
+  result += "\n\n\n"
+  result += `dpkg -s gcc`
   return result
 end
