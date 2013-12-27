@@ -74,5 +74,7 @@ get "/lsb" do
   result += `dpkg -s bison`
   result += "\n\n\nChecking if [gcc] is installed..."
   result += `dpkg -s gcc`
+  result += "\n\n\nChecking [git] exists? " + `which git`
+  result += "\n\n\nChecking [mercurial] exists? " + `which hg`
   return result
 end
