@@ -58,6 +58,9 @@ end
 end
 
 get "/lsb" do
+  content_type 'text/plain'
   result = `cat /etc/lsb-release`
+  result += "\n" + `ruby -v`
+  result += "\n" + `python --version`
   return result
 end
