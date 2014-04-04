@@ -56,3 +56,25 @@ end
     end
   end
 end
+
+get "/lsb" do
+  content_type 'text/plain'
+  result = `cat /etc/lsb-release`
+  result += "\n\n\nChecking if [curl] is installed..."
+  result += `dpkg -s curl`
+  result += "\n\n\nChecking if [git] is installed..."
+  result += `dpkg -s git`
+  result += "\n\n\nChecking if [mercurial] is installed..."
+  result += `dpkg -s mercurial`
+  result += "\n\n\nChecking if [make] is installed..."
+  result += `dpkg -s make`
+  result += "\n\n\nChecking if [binutils] is installed..."
+  result += `dpkg -s binutils`
+  result += "\n\n\nChecking if [bison] is installed..."
+  result += `dpkg -s bison`
+  result += "\n\n\nChecking if [gcc] is installed..."
+  result += `dpkg -s gcc`
+  result += "\n\n\nChecking [git] exists? " + `which git`
+  result += "\n\n\nChecking [mercurial] exists? " + `which hg`
+  return result
+end
